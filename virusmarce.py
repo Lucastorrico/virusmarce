@@ -1,7 +1,7 @@
 import tkinter as tk
 import pyautogui 
 import time
-
+import winsound
 # Crear ventana
 root = tk.Tk()
 root.overrideredirect(True)       # Quita bordes
@@ -16,9 +16,10 @@ label.pack()
 # Posición inicial de la ventana
 x_ventana, y_ventana = 100, 100
 
+   
 def seguir_mouse():
     global x_ventana, y_ventana
-
+    
     # Posición actual del mouse
     x_mouse, y_mouse = pyautogui.position()
 
@@ -32,8 +33,10 @@ def seguir_mouse():
 
     # Repetir
     root.after(10, seguir_mouse)
-
+def musica():
+ winsound.PlaySound("SE-ESCUCHA-LENTOOOO___.WAV", winsound.SND_ASYNC)
 # Arrancar después de 1s
 time.sleep(1)
 seguir_mouse()
+musica()
 root.mainloop()
