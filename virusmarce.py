@@ -36,7 +36,10 @@ def seguir_mouse():
 def musica():
  winsound.PlaySound("SE-ESCUCHA-LENTOOOO___.WAV", winsound.SND_ASYNC)
 # Arrancar después de 1s
+def accion_click(event):
+   musica()
+label.bind("<Button-1>", accion_click)
 time.sleep(1)
 seguir_mouse()
-musica()
+
 root.mainloop()
